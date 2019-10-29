@@ -1,0 +1,40 @@
+<Table border ref="selection" :columns="columns1" :data="data1">
+      <!-- <template slot-scope="{ row }" slot="name">
+        <strong>{{ row.name }}</strong>
+      </template>
+      <template slot-scope="{ row, index }" slot="action">
+        <Button type="primary" size="small" style @click="showBtn(index)">查看</Button>
+        <Button type="primary" size="small" style="margin: 0 5px" @click="show(index)">修改</Button>
+        <Button type="error" size="small" @click="remove(index)">删除</Button>
+      </template> -->
+    </Table>
+
+
+
+
+
+
+    
+    <!-- 新增 -->
+    <!-- <Modal width="332" v-model="modal2" title="新增角色" @on-ok="ok2" @on-cancel="cancel2">
+      <div class="modal-new">
+        <label for="new">单位编码 :</label>
+        <input type="text" name="new" v-model="addData.code">
+      </div>
+      <div class="modal-new">
+        <label for="new">单位名称 :</label>
+        <input type="text" name="new" v-model="addData.name">
+      </div>
+      <div class="modal-new">
+        <label for="new">时区 : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="text" name="new" v-model="addData.name">
+      </div>
+      <div class="modal-new">
+        <label for="new">单位性质 :</label>
+        <input type="text" name="new" v-model="addData.company">
+      </div>
+      <div class="modal-new">
+        <label for="new">行业信息 :</label>
+        <input type="text" name="new" v-model="addData.company">
+      </div>
+    </Modal> -->

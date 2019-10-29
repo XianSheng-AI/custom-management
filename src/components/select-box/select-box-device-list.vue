@@ -1,0 +1,85 @@
+<template>
+  <div class="hide--box" :class="{'show':comObj.showFlag}">
+    <div class="hide-empty">
+      <div class="hide-list">
+        <div class="hide-list-item">
+          <vue-scroll :ops="ops">
+              
+            <span class="edu-type"
+                  v-for="item in selectBox_data_find.data"
+                  :key="item.typeCode"
+                  @click="responseMethod(item)"
+            >{{item.typeName}}</span>
+          </vue-scroll>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+    export default {
+        props:{
+          selectBox_data_find:{
+            type: Object
+          }
+        },
+        name: "Select-Box-role",
+        data() {
+            return {
+              ops: {
+              },
+              comObj:{
+                showFlag:false
+              }
+            }
+        },
+        mounted(){
+        },
+        methods:{
+          change(){
+          },
+          repeatControl(){
+            this.$set(this.comObj,'showFlag',!this.comObj.showFlag)
+          },
+          responseMethod(item){
+            this.$set(this.comObj,'showFlag',!this.comObj.showFlag);
+            this.$emit('reciveFindMe',item)
+          }
+        }
+    }
+</script>
+
+<style lang="stylus" scoped>
+  .hide--box
+    z-index: 100
+    color: #8590a6
+    position: absolute;
+    top 2.6rem
+    left 0
+    background: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 4px;
+    box-shadow: 0 5px 20px rgba(26,26,26,.1);
+    box-sizing border-box
+    width: 100%
+    overflow: hidden
+    visibility: hidden
+    opacity:0
+    transition opacity .2s ease-out
+    &.show
+      visibility: visible
+      opacity:1
+      max-height 10rem
+    .hide-empty
+      padding:.5rem 0
+      .hide-list
+        .hide-list-item
+          height 12rem
+          .edu-type
+            width: inherit
+            display: block
+            padding:.6rem 1.4rem
+            cursor: pointer;
+            &:hover
+              background: #f6f6f6
+</style>
